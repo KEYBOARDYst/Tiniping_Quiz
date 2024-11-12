@@ -5,7 +5,7 @@ export function Tiniping() {
   const [tinipings, setTiniping] = useState([]);
 
   useEffect(() => {
-    fetch("/tiniping/tinipings.json")
+    fetch("/Tiniping_Quiz/tiniping/tinipings.json")
       .then((response) => response.json())
       .then((data) => setTiniping(data))
       .catch((error) => console.error("Error fetching 1_cube data:", error));
@@ -251,7 +251,10 @@ export function Tiniping() {
               <p className="number">
                 {num + 1}/{questions.length}
               </p>
-              <img src={`/tiniping/${questions[num]}.webp`} alt="티니핑 퀴즈" />
+              <img
+                src={`/Tiniping_Quiz/tiniping/${questions[num]}.webp`}
+                alt="티니핑 퀴즈"
+              />
             </>
           )}
         </div>
