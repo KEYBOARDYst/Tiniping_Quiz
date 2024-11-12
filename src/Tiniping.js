@@ -34,7 +34,7 @@ export function Tiniping() {
     else {
       let questionList = [];
 
-      if (category == "all") {
+      if (category === "all") {
         questionList = tinipings["cube"].concat(
           tinipings["jewel"],
           tinipings["key"],
@@ -47,6 +47,7 @@ export function Tiniping() {
         setQuestions(getRandomElements(questionList, questionNum));
       } else setQuestions(getRandomElements(questionList, questionList.length));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isStart]);
 
   /* 3. 정답 입력 후 정/오답 체크 + 카운트다운 */
@@ -74,7 +75,7 @@ export function Tiniping() {
     if (!input.current) return;
 
     const answer = input.current.value;
-    if (answer == questions[num]) {
+    if (answer === questions[num]) {
       setIsCorrect(1);
       setScore(score + 1);
       if (selectTime != null) {
@@ -102,7 +103,7 @@ export function Tiniping() {
   function calculateResult() {
     const resultScore = Math.round((100 / questions.length) * score);
 
-    if (resultScore == 0) {
+    if (resultScore === 0) {
       setResult({
         title: "0점",
         desc: "우리 남아서 티니핑 공부할까?",
@@ -140,7 +141,7 @@ export function Tiniping() {
       });
   }
   function nextQuestion() {
-    if (num == questions.length - 1) {
+    if (num === questions.length - 1) {
       calculateResult();
       setIsFinish(true);
       setResult({
@@ -250,7 +251,7 @@ export function Tiniping() {
               <p className="number">
                 {num + 1}/{questions.length}
               </p>
-              <img src={`/tiniping/${questions[num]}.webp`} />
+              <img src={`/tiniping/${questions[num]}.webp`} alt="티니핑 퀴즈" />
             </>
           )}
         </div>
@@ -303,7 +304,7 @@ export function Tiniping() {
                 현재 점수 : {Math.round((100 / questions.length) * score)}점
               </p>
               <div className="result">
-                {isCorrect == -1 ? (
+                {isCorrect === -1 ? (
                   <>
                     <div>
                       <p className="result-text">땡!</p>
@@ -323,7 +324,7 @@ export function Tiniping() {
                         }}
                       >
                         카카오톡 공유하기
-                      </button>{" "}
+                      </button>
                       <button
                         className="pink-button"
                         onClick={() => {
@@ -340,13 +341,13 @@ export function Tiniping() {
                   </>
                 ) : (
                   <div>
-                    <p> {isCorrect == 1 && "통과!"}</p>
+                    <p> {isCorrect === 1 && "통과!"}</p>
                     {time != null && <p className="result-text">{time}</p>}
                   </div>
                 )}
               </div>
 
-              {isCorrect != -1 && (
+              {isCorrect !== -1 && (
                 <div style={{ display: "flex" }}>
                   <input
                     ref={input}
