@@ -1,0 +1,288 @@
+/* 1. 초기 HTML 구조 세팅 */
+@font-face {
+  font-family: "CookieRun-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: CookieRun-Regular;
+}
+.container {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(rgba(6, 6, 6, 0.7), rgba(41, 41, 41, 0.7)),
+    url("/public/background.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  gap: 30px;
+}
+.top-container {
+  width: 80%;
+  background-color: white;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border: 3px solid #fd80b3;
+}
+.top-container .dropdown {
+  margin: 20px 0 30px;
+  text-align: center;
+}
+
+.top-container .toggle-select {
+  appearance: none;
+  background-color: #fd80b3;
+  color: white;
+  padding: 8px 15px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.top-container .toggle-select:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(240, 147, 251, 0.5);
+}
+
+.top-container .toggle-select option {
+  background-color: #fdc8da;
+  color: black;
+}
+
+.center-container {
+  width: 80%;
+  height: 50%;
+  border-radius: 15px;
+  display: flex;
+  gap: 30px;
+}
+.center-container .box {
+  background-color: white;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #fd80b3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-container .box .img-box {
+  background-color: #cccccc;
+  height: 300px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+.center-container .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.center-container .button-container .start-button {
+  background-color: #f5576c;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.center-container .button-container .start-button:hover {
+  background-color: #d04555;
+}
+/* ---1. 초기 HTML 구조 세팅 */
+
+/* 2. 시작 버튼 클릭 후 문제 생성 후 문제 보여주기 */
+.center-container .box img {
+  height: 300px;
+}
+/* ---2. 시작 버튼 클릭 후 문제 생성 후 문제 보여주기 */
+
+/* 3. 정답 입력 후 정/오답 체크 + 카운트다운 */
+.center-container .answer-input {
+  margin-right: 10px;
+  font-variant: tabular-nums;
+  font-size: 1.3rem;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.85);
+  border: 1px solid #4b4b4b;
+  border-radius: 5px;
+}
+.center-container .pink-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(255, 80, 109);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.center-container .result {
+  height: 60%;
+}
+.center-container .result .result-text {
+  font-size: 5rem;
+  margin: 0;
+}
+.center-container .result .answer {
+  font-size: 1.3rem;
+}
+.center-container .result .answer strong {
+  color: rgb(255, 80, 109);
+}
+/* ----3. 정답 입력 후 정/오답 체크 + 카운트다운 */
+
+/* 4. 게임 종료 후 결과 발표 */
+@keyframes celebration {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+    color: #ff007f;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.2) rotate(15deg);
+    color: #ff77ff;
+  }
+  50% {
+    transform: scale(1.5) rotate(-15deg);
+    color: #ff007f;
+  }
+  75% {
+    transform: scale(1.2) rotate(10deg);
+    color: #ff77ff;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    color: #ff007f;
+  }
+}
+.finish-message {
+  font-size: 2em;
+  text-align: center;
+  animation: celebration 2s ease-in-out infinite;
+}
+/* ----4. 게임 종료 후 결과 발표 */
+
+/* 5. 카카오톡 공유하기*/
+.kakao-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #fee500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* ----5. 카카오톡 공유하기*/
+
+@media (max-width: 800px) {
+  .container {
+    padding: 10px 0;
+    gap: 10px;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+  }
+  .top-container {
+    width: 90%;
+    background-color: white;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    border: 3px solid #fd80b3;
+    padding: 10px 0;
+  }
+  .top-container h2 {
+    margin: 0;
+  }
+  .top-container .toggle-select {
+    padding: 4px 8px;
+    margin: 0 5px;
+    font-size: 0.8rem;
+  }
+  .top-container .dropdown {
+    margin: 0;
+  }
+
+  .center-container {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  .center-container .box {
+    justify-content: start;
+    padding: 5px 0;
+    height: fit-content;
+  }
+  .center-container .box .img-box {
+    height: 250px;
+  }
+
+  .center-container .box img {
+    height: 150px;
+    object-fit: contain;
+  }
+  .center-container .button-container {
+    margin: 0;
+  }
+  .center-container .box p {
+    margin: 5px 0;
+  }
+  .center-container .result .result-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    font-size: 1.2rem;
+    background-color: #fd80b3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+  }
+  .center-container .result .answer {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  .center-container .answer-input {
+    margin-right: 5px;
+    font-size: 0.8rem;
+    padding: 2px 5px;
+  }
+  .finish-message {
+    font-size: 1.3rem;
+  }
+  .finish-button {
+    margin: 20px 0 10px;
+  }
+}
