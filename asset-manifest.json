@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Tiniping_Quiz/static/css/main.e46e78c3.css",
+    "main.js": "/Tiniping_Quiz/static/js/main.e5f6a40b.js",
+    "static/media/background.png": "/Tiniping_Quiz/static/media/background.57ff4cb51888d409fa40.png",
+    "index.html": "/Tiniping_Quiz/index.html",
+    "main.e46e78c3.css.map": "/Tiniping_Quiz/static/css/main.e46e78c3.css.map",
+    "main.e5f6a40b.js.map": "/Tiniping_Quiz/static/js/main.e5f6a40b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e46e78c3.css",
+    "static/js/main.e5f6a40b.js"
+  ]
+}
