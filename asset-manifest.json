@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Tiniping_Quiz/static/css/main.e46e78c3.css",
+    "main.css": "/Tiniping_Quiz/static/css/main.1e16c2a4.css",
     "main.js": "/Tiniping_Quiz/static/js/main.5502a0b3.js",
     "static/media/background.png": "/Tiniping_Quiz/static/media/background.57ff4cb51888d409fa40.png",
     "index.html": "/Tiniping_Quiz/index.html",
-    "main.e46e78c3.css.map": "/Tiniping_Quiz/static/css/main.e46e78c3.css.map",
+    "main.1e16c2a4.css.map": "/Tiniping_Quiz/static/css/main.1e16c2a4.css.map",
     "main.5502a0b3.js.map": "/Tiniping_Quiz/static/js/main.5502a0b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.e46e78c3.css",
+    "static/css/main.1e16c2a4.css",
     "static/js/main.5502a0b3.js"
   ]
 }
